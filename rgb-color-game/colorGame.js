@@ -28,6 +28,9 @@ var pickedColor = colors[3];
 // to do that, have to change html, put span around "RGB" with id="colorDisplay"
 var colorDisplay = document.getElementById("colorDisplay");
 
+// flash message to show "correct" if right or "try again" if wrong
+var messageDisplay = document.querySelector("#message");
+
 // update "colorDisplay" so it says the color picked
 colorDisplay.textContent = pickedColor;
 
@@ -43,9 +46,10 @@ for (var i = 0; i < squares.length; i++) {
         var clickedColor = this.style.backgroundColor;
         // compare color to "pickedColor" by writing an "if" statement
         if (clickedColor === pickedColor) {
-            alert("Correct!");
+            messageDisplay.textContent = "Correct!";
         } else {
-            alert("WRONG!!!")
+            this.style.backgroundColor = "#232323";
+            messageDisplay.textContent = "Try Again";
         }
     });
 }
@@ -56,3 +60,6 @@ for (var i = 0; i < squares.length; i++) {
 // when run code for which color if clicked on squares and compared to the "pickedColor"
 // if different not "pickedColor", change the color of square to background of the body
 // if selects correct one to "pickedColor", then the player has won! (do something special)
+// add behavior for when you click the right color or wrong color
+// if it's wrong, fade out the color to background
+// in the text display, we also want it to have a message of "correct" or "try again" (go back to html and add another div)
