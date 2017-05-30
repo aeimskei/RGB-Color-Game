@@ -47,6 +47,7 @@ for (var i = 0; i < squares.length; i++) {
         // compare color to "pickedColor" by writing an "if" statement
         if (clickedColor === pickedColor) {
             messageDisplay.textContent = "Correct!";
+            changeColors(clickedColor); // call and pass in the "clickedColor" above
         } else {
             this.style.backgroundColor = "#232323";
             messageDisplay.textContent = "Try Again";
@@ -63,3 +64,14 @@ for (var i = 0; i < squares.length; i++) {
 // add behavior for when you click the right color or wrong color
 // if it's wrong, fade out the color to background
 // in the text display, we also want it to have a message of "correct" or "try again" (go back to html and add another div)
+
+// add feature for when you get right color, all squares will change color to match the correct color
+// can also change the color background of h1 as well
+// write a separate function to keep code more organized that takes single argument (color) string
+function changeColors(color) {
+    // loop throuh all squares
+    for (var i = 0; i < squares.length; i++) {
+    // change each color to match the given color
+    squares[i].style.backgroundColor = color;
+    }
+}
