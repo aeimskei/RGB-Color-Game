@@ -1,0 +1,25 @@
+body {
+    background-color: #232323;
+}
+
+/* style each of the squares in container */
+/* each square will take up 30% of containter */
+/* the margin will on all sides = 1.66% */
+/* so that'll all add up to be 100% if the container */
+
+.square {
+    width: 30%;
+    background: purple;
+    padding-bottom: 30%; /* in order to see starting off, you need to include this */
+    float: left; /* to get it to be all on the same line */
+    margin: 1.66%; /* this will create the grid */
+}
+
+#container {
+    margin: 0 auto; /* 0 for top and bottom, auto for left and right */
+    max-width: 600px; /* will make the squares much smaller */
+}
+
+h1 {
+    color: white;
+}
