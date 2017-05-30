@@ -5,6 +5,9 @@
 // make an array of colors (put on separate lines for more visibility)
 // an array of 6 colors as strings
 var colors = generateRandomColors(6);
+
+// let's also change the h1 background color to match the picked color
+var h1 = document.querySelector("h1");
     
 // select all 6 squares, loop through them and assign on of these colors to each one's backgrounds
 // use document.querySelectorAll bc we have a lot of choices, to make sure to get all 6
@@ -39,6 +42,7 @@ for (var i = 0; i < squares.length; i++) {
         if (clickedColor === pickedColor) {
             messageDisplay.textContent = "Correct!";
             changeColors(clickedColor); // call and pass in the "clickedColor" above
+            h1.style.backgroundColor = clickedColor;
         } else {
             this.style.backgroundColor = "#232323";
             messageDisplay.textContent = "Try Again";
@@ -94,4 +98,3 @@ function randomColor() {
     // now we have to synthesize to "rgb(r, g, b)" and return that string
    return "rgb(" + r + ", " + g + ", " + b + ")";
 }
-
