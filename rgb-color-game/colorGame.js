@@ -4,14 +4,7 @@
 
 // make an array of colors (put on separate lines for more visibility)
 // an array of 6 colors as strings
-var colors = [
-    "rgb(255, 0, 0)", // all red
-    "rgb(255, 255, 0)", // all red and green = yellow
-    "rgb(0, 255, 0)", // all green
-    "rgb(0, 255, 255)", // all green and blue = cyan
-    "rgb(0, 0, 255)", // all blue
-    "rgb(255, 0, 255)" // all red and blue = purple
-    ];
+var colors = generateRandomColors(6);
     
 // select all 6 squares, loop through them and assign on of these colors to each one's backgrounds
 // use document.querySelectorAll bc we have a lot of choices, to make sure to get all 6
@@ -79,5 +72,26 @@ function pickColor() {
    var random = Math.floor(Math.random() * colors.length); // (1) pick a random number
     // (2) then use that random number to access the color of the array and return that color
     return colors[random];
+}
+
+// make it so we don't use only a variation of the 6 colors in array (really randomize now)
+// create function to call for "generateRandomColors()"
+function generateRandomColors(num) {
+    var arr = []; // make an empty array
+    for (var i = 0; i < num; i++) { // repeat num times
+        // get random color and push into array (create another function for this below)
+    }
+    return arr; // return array at end
+}
+
+function randomColor() {
+    // pick a red from 0 - 255
+    var r = Math.floor(Math.random() * 256);
+    // pick a green from 0 - 255
+    var g = Math.floor(Math.random() * 256);
+    // pick a blue from 0 - 255
+    var b = Math.floor(Math.random() * 256);
+    // now we have to synthesize to "rgb(r, g, b)" and return that string
+   return "rgb(" + r + "," + g + "," + b + ")";
 }
 
