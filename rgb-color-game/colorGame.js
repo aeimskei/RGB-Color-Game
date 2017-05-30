@@ -34,5 +34,18 @@ colorDisplay.textContent = pickedColor;
 // [i] is going to loop through all squares (0, 1, 2, 3, 4, 5)
 // each var "squares" will be colored based on the array of var "colors"
 for (var i = 0; i < squares.length; i++) {
+    // add initial colors to squares
     squares[i].style.backgroundColor = colors[i]; // use style.backgroundColor (now it'll work with all browsers)
+    
+    // add click listeners to squares and callback function
+    squares[i].addEventListener("click", function(){
+        alert("clicked a square");
+    });
 }
+
+// ^ use loop above
+// add logic to the "click" events (start off with simple picked handler)
+// so use the same loop that we have bc we're gonna use for all squares
+// when run code for which color if clicked on squares and compared to the "pickedColor"
+// if different not "pickedColor", change the color of square to background of the body
+// if selects correct one to "pickedColor", then the player has won! (do something special)
