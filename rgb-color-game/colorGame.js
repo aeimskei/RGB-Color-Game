@@ -40,9 +40,13 @@ for (var i = 0; i < squares.length; i++) {
     // add click listeners to squares and callback function
     squares[i].addEventListener("click", function(){
         // grab color of clicked square (use "this" to refer to the item that was clicked)
-        alert(this.style.backgroundColor);
-        // compare color to "pickedColor"
-    
+        var clickedColor = this.style.backgroundColor;
+        // compare color to "pickedColor" by writing an "if" statement
+        if (clickedColor === pickedColor) {
+            alert("Correct!");
+        } else {
+            alert("WRONG!!!")
+        }
     });
 }
 
