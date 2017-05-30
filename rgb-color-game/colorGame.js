@@ -20,9 +20,7 @@ var squares = document.querySelectorAll(".square");
 
 // next, generate 3 different numbers from 0-255 and then combine them
 // so just 3 differen channels, all randomized into one big string with RGB
-// start off with hard-coding them in first, say goal color is cyan, not randomized
-// cyan is the 4th color, so index of 3
-var pickedColor = colors[3];
+var pickedColor = pickColor();
 
 // then update page so that it says RGB and in () the colors
 // to do that, have to change html, put span around "RGB" with id="colorDisplay"
@@ -69,9 +67,17 @@ for (var i = 0; i < squares.length; i++) {
 // can also change the color background of h1 as well
 // write a separate function to keep code more organized that takes single argument (color) string
 function changeColors(color) {
-    // loop throuh all squares
-    for (var i = 0; i < squares.length; i++) {
-    // change each color to match the given color
-    squares[i].style.backgroundColor = color;
+    for (var i = 0; i < squares.length; i++) { // loop throuh all squares
+    squares[i].style.backgroundColor = color; // change each color to match the given color
     }
 }
+
+// now get random color in array with a function (bc we have to call a few times) 
+// picking random color from that array
+// this function will do two things
+function pickColor() {
+   var random = Math.floor(Math.random() * colors.length); // (1) pick a random number
+    // (2) then use that random number to access the color of the array and return that color
+    return colors[random];
+}
+
