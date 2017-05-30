@@ -79,7 +79,7 @@ function pickColor() {
 function generateRandomColors(num) {
     var arr = []; // make an empty array
     for (var i = 0; i < num; i++) { // repeat num times
-        // get random color and push into array (create another function for this below)
+        arr.push(randomColor());// get random color and push into array (create randomColor function to call)
     }
     return arr; // return array at end
 }
@@ -92,6 +92,6 @@ function randomColor() {
     // pick a blue from 0 - 255
     var b = Math.floor(Math.random() * 256);
     // now we have to synthesize to "rgb(r, g, b)" and return that string
-   return "rgb(" + r + "," + g + "," + b + ")";
+   return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
