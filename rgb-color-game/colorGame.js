@@ -2,9 +2,12 @@
 // everytime the page loads, it'll pick 6 random colors
 // and assigns each color to one of the divs
 
+// keep track which level players are in
+var numSquares = 6;
+
 // make an array of colors (put on separate lines for more visibility)
 // an array of 6 colors as strings
-var colors = generateRandomColors(6);
+var colors = generateRandomColors(numSquares);
 
 // let's also change the h1 background color to match the picked color
 var h1 = document.querySelector("h1");
@@ -16,26 +19,46 @@ var resetButton = document.querySelector("#reset");
 var easyBtn = document.querySelector("#easyBtn");
 var hardBtn = document.querySelector("#hardBtn");
 
+// add click listeners to easy vs hard mode
 easyBtn.addEventListener("click", function() {
     hardBtn.classList.remove("selected");
     easyBtn.classList.add("selected");
+    numSquares = 3;
+    colors = generateRandomColors(numSquares); // when click on easy button, generate 3 new colores
+    pickedColor = pickColor(); // one of those will be new pickedColor
+    colorDisplay.textContent = pickedColor; // need to updates RGB span for pickedColor
+    for (var i = 0; i < squares.length; i++) { // upate the 3 squares and hide the 3 other squares below by setting display to none
+        if (colors[i]) { // if there is a next color
+            squares[i].style.backgroundColor = colors[i]; // means, for the first 3, loop through all of the squares, check there is a color at that index, if there is, change the colors of first 3
+        } else { // hide the bottom 3
+            squares[i].style.display = "none";
+        }
+    }
 });
 
 hardBtn.addEventListener("click", function() {
     hardBtn.classList.add("selected");
     easyBtn.classList.remove("selected");
+    numSquares = 6;
+    colors = generateRandomColors(numSquares); // when click on easy button, generate 6 new colores
+    pickedColor = pickColor(); // one of those will be new pickedColor
+    colorDisplay.textContent = pickedColor; // need to updates RGB span for pickedColor
+    for (var i = 0; i < squares.length; i++) { // upate all squares to have colors
+        squares[i].style.backgroundColor = colors[i];
+        squares[i].style.display = "block";
+    }
 });
 
 resetButton.addEventListener("click", function() {
     // when you click on that button "need to generated all new colors" (re-use generateRandomColors function)
-    colors = generateRandomColors(6);
+    colors = generateRandomColors(numSquares);
     // pick a new random color from array (re-use the methog/function defined previously)
     pickedColor = pickColor();
     // change colorDisplay to match picked Color
     colorDisplay.textContent = pickedColor;
     // change colors of the squares
     for (var i = 0; i < squares.length; i++) {
-        squares[i].style.background = colors[i];
+        squares[i].style.backgroundColor = colors[i];
     }
     h1.style.background = "#232323";
 });
@@ -136,4 +159,6 @@ function randomColor() {
    return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
-// add click listeners to easy vs hard mode
+// when click hard button, generate 6 new colors
+// one will be our pickedColor at top
+// we re-show the bottom 3 sqaures and set each to have color
