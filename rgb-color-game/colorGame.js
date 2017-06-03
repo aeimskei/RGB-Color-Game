@@ -8,6 +8,28 @@ var colors = generateRandomColors(6);
 
 // let's also change the h1 background color to match the picked color
 var h1 = document.querySelector("h1");
+
+// create function for button to rest game, needs to add Event Listener to button
+var resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener("click", function() {
+    // when you click on that button "need to generated all new colors" (re-use generateRandomColors function)
+    colors = generateRandomColors(6);
+    // pick a new random color from array (re-use the methog/function defined previously)
+    pickedColor = pickColor();
+    // change colorDisplay to match picked Color
+    colorDisplay.textContent = pickedColor;
+    // change colors of the squares
+    for (var i = 0; i < squares.length; i++) {
+        squares[i].style.background = colors[i];
+    }
+    h1.style.background = "#232323";
+});
+
+// simple test for event listener (when we click, it will do a simple function)
+/* resetButton.addEventListener("click", function() {
+    alert("CLICKED RESET BUTTON");
+}); */
     
 // select all 6 squares, loop through them and assign on of these colors to each one's backgrounds
 // use document.querySelectorAll bc we have a lot of choices, to make sure to get all 6
@@ -41,6 +63,7 @@ for (var i = 0; i < squares.length; i++) {
         // compare color to "pickedColor" by writing an "if" statement
         if (clickedColor === pickedColor) {
             messageDisplay.textContent = "Correct!";
+            resetButton.textContent = "Play Again?";
             changeColors(clickedColor); // call and pass in the "clickedColor" above
             h1.style.backgroundColor = clickedColor;
         } else {

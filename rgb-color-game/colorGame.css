@@ -24,6 +24,14 @@ h1 {
     color: white;
 }
 
-span {
-    color: white;
+/*// add stripe across that will contain button to allow reset / play again / also message of results*/
+/*// go edit <div> in html 1st and give id of "stripe"*/
+/*// add white background and then center the <div> (go to css sheet & select "stripe")*/
+/*// remove <span> white bc it's messing up specificity*/
+
+#stripe {
+    background: white;
+    height: 30px;
+    text-align: center;
+    color: black;
 }
