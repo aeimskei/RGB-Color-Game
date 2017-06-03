@@ -12,6 +12,20 @@ var h1 = document.querySelector("h1");
 // create function for button to rest game, needs to add Event Listener to button
 var resetButton = document.querySelector("#reset");
 
+// easy vr hard mode buttons
+var easyBtn = document.querySelector("#easyBtn");
+var hardBtn = document.querySelector("#hardBtn");
+
+easyBtn.addEventListener("click", function() {
+    hardBtn.classList.remove("selected");
+    easyBtn.classList.add("selected");
+});
+
+hardBtn.addEventListener("click", function() {
+    hardBtn.classList.add("selected");
+    easyBtn.classList.remove("selected");
+});
+
 resetButton.addEventListener("click", function() {
     // when you click on that button "need to generated all new colors" (re-use generateRandomColors function)
     colors = generateRandomColors(6);
@@ -121,3 +135,5 @@ function randomColor() {
     // now we have to synthesize to "rgb(r, g, b)" and return that string
    return "rgb(" + r + ", " + g + ", " + b + ")";
 }
+
+// add click listeners to easy vs hard mode
