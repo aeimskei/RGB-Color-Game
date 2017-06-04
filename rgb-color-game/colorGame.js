@@ -40,12 +40,12 @@ hardBtn.addEventListener("click", function() {
     hardBtn.classList.add("selected");
     easyBtn.classList.remove("selected");
     numSquares = 6;
-    colors = generateRandomColors(numSquares); // when click on easy button, generate 6 new colores
+    colors = generateRandomColors(numSquares); // when click on easy button, generate 6 new colors
     pickedColor = pickColor(); // one of those will be new pickedColor
     colorDisplay.textContent = pickedColor; // need to updates RGB span for pickedColor
     for (var i = 0; i < squares.length; i++) { // upate all squares to have colors
         squares[i].style.backgroundColor = colors[i];
-        squares[i].style.display = "block";
+        squares[i].style.display = "block"; // shows the previously hidden squares in easy mode
     }
 });
 
@@ -60,7 +60,7 @@ resetButton.addEventListener("click", function() {
     for (var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colors[i];
     }
-    h1.style.background = "#232323";
+    h1.style.background = "steelblue";
 });
 
 // simple test for event listener (when we click, it will do a simple function)
@@ -158,7 +158,3 @@ function randomColor() {
     // now we have to synthesize to "rgb(r, g, b)" and return that string
    return "rgb(" + r + ", " + g + ", " + b + ")";
 }
-
-// when click hard button, generate 6 new colors
-// one will be our pickedColor at top
-// we re-show the bottom 3 sqaures and set each to have color
