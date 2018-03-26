@@ -1,14 +1,14 @@
-RGB Color Game Project
+## RGB Color Game Project
 
 A substantial application a lot of moving pieces.
 
-*Longer HTML
-*Lots of CSS and styling
-*Lots of DOM manipulation and event handling
-*A lot of Javascript, ~100 lines
-*Start off with functionality and then styling after
+* Longer HTML
+* Lots of CSS and styling
+* Lots of DOM manipulation and event handling
+* A lot of Javascript, ~100 lines
+* Start off with functionality and then styling after
 
-Description:
+## Description:
 A good tool to practice RGB colors because RGB systems are a bit unintuitive at first compared to most color systems that people are used to working with. So, let’s try to make learning it a little fun and challenging, yay! 
 
 When you land on the page, you’ll get six random colors (they’re going to always change and be different. One of the color of the six, is lists in the large text above. Your goal is to find which of the six boxes below is that RGB color.
