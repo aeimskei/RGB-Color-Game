@@ -9,7 +9,7 @@ A substantial application a lot of moving pieces.
 * Start off with functionality and then styling after
 
 ## Play the Great RGB Color Game!
-link:greatrgbcolorgame.surge.sh[greatrgbcolorgame.surge.sh]
+[greatrgbcolorgame.surge.sh]
 
 ## Description:
 A good tool to practice RGB colors because RGB systems are a bit unintuitive at first compared to most color systems that people are used to working with. So, let’s try to make learning it a little fun and challenging, yay! 
