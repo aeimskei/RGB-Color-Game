@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="colorGame.css">
+</head>
+
+<body>
+    <h1>The Great
+        <br>
+        <span id="colorDisplay">RGB</span>
+        <br> Color Game</h1>
+
+    <!--// need a button that will reset game, picking new random colors-->
+    <!--// we already have the "play again" option-->
+    <!--// add a button-->
+
+    <!-- reset button id stripe for new random colors -->
+    <!-- text display message of "correct" or "try again" -->
+    <div id="stripe">
+        <button id="reset">New Colors</button>
+        <span id="message"></span>
+        <!-- create button options for easy or hard -->
+        <button class="mode">Easy</button>
+        <button class="mode selected">Hard</button>
+    </div>
+
+    <!-- make the squares with divs with "square class" to style them later -->
+    <div id="container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+
+    <script type="text/javascript" src="colorGame.js"></script>
+</body>
+
+</html>
