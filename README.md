@@ -1,4 +1,4 @@
-## RGB Color Game Project
+# RGB Color Game Project
 
 A substantial application a lot of moving pieces.
 
