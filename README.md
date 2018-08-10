@@ -8,10 +8,12 @@ A substantial application a lot of moving pieces.
 * A lot of Javascript, ~100 lines
 * Start off with functionality and then styling after
 
-## Play the Great RGB Color Game!
+<kbd>![alt text](screenshot.png "RGB Color Game Screenshot")</kbd>
+
+## Play the Great RGB Color Game
 http://greatrgbcolorgame.surge.sh/
 
-## Description:
+## Description
 A good tool to practice RGB colors because RGB systems are a bit unintuitive at first compared to most color systems that people are used to working with. So, let’s try to make learning it a little fun and challenging, yay! 
 
 When you land on the page, you’ll get six random colors (they’re going to always change and be different. One of the color of the six, is lists in the large text above. Your goal is to find which of the six boxes below is that RGB color.
